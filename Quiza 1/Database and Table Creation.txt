@@ -1,0 +1,90 @@
+1. Database and Table Creation
+
+Create a database named &quot;University&quot; with the following tables:
+
+Ans : 
+ CREATE DATABASE University;
+
+
+
+
+a: Students table:
+StudentID (Primary Key)
+FirstName
+LastName
+Age
+Major
+Ans: 
+Create table Students( StudentsID int Primary Key, firstName varchar(50) not null , lastName varchar(50), age int not null,Major varchar(50) not null );
+
+
+
+b. Courses table:
+CourseID (Primary Key)
+CourseName
+Instructor
+
+Ans:
+Create table Courses (CourseID int Primary Key,  CourseName varchar(50) not null , Instructor varchar(50) not null );
+
+
+
+2: Insert Data
+
+Insert at least 5 records into the Students table and 3 records into the Courses table.
+
+
+Ans :  
+
+a. 
+
+insert into Students (StudentsID, firstName, lastName, age, major) values ('1','Qasim', 'ali', 20, 'Computer Science');
+
+insert into Students (StudentsID, firstName, lastName, age, major) values ('2','Muhmmad', 'Rafay', 21, 'Computer Science');
+
+insert into Students (StudentsID, firstName, lastName, age, major) values ('3','Ahmad', 'ali', 19, 'Computer Science');
+
+insert into Students (StudentsID, firstName, lastName, age, major) values ('4','jawad', 'ahmad', 18, 'Computer Science');
+
+insert into Students (StudentsID, firstName, lastName, age, major) values ('5','mani', 'khan', 22, 'Computer Science');
+
+
+
+b.
+insert into Courses (CourseID , CourseName ,Instructor) values ('1','Calculus', 'Dr.askar');
+
+insert into Courses (CourseID , CourseName ,Instructor) values('2','Python Programming', 'waqas ahmad');
+
+insert into Courses (CourseID , CourseName ,Instructor) values('3','Data Structures', 'Fazal basti');
+
+
+Q4: 
+a. Select all students and their majors.
+SELECT firstName, lastName, major FROM Students;
+ 
+
+b: Select courses taught by a specific instructor.
+SELECT CourseName, Instructor FROM Courses WHERE Instructor = 'Dr.askar';
+
+
+c: Count the number of students in each major.
+SELECT major, COUNT(*) AS StudentCount FROM Students GROUP BY major;
+
+
+
+
+
+4: Update Operations
+Update the age of a specific student in the Students table.
+
+UPDATE Students
+SET Age = 24
+WHERE StudentsID = 1;
+
+
+
+5: Delete Operation
+Delete a course from the Courses table.
+
+DELETE FROM Courses
+WHERE CourseID = 1;
